@@ -1,10 +1,13 @@
 package frc.robot;
 
 import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.Drive;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.Drivetrain;
+import frc.robot.Constants.OperatorConstants;
 import frc.thunder.LightningContainer;
+import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 /**
@@ -14,10 +17,14 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
  * subsystems, commands, and trigger mappings) should be declared here.
  */
 public class RobotContainer extends LightningContainer {
+
+    private static final XboxController driver = new XboxController(OperatorConstants.DRIVER_PORT);
+    private static final XboxController copilot = new XboxController(OperatorConstants.COPILOT_PORT);
+
+    private static final Drivetrain drivetrain = new Drivetrain();
    
     @Override
     protected void initializeSubsystems() {}
-
 
     @Override
     protected void initializeNamedCommands() {}
@@ -29,14 +36,15 @@ public class RobotContainer extends LightningContainer {
     protected void configureSystemTests() {}
 
     @Override
-    protected void configureDefaultCommands() {}
+    protected void configureDefaultCommands() {
+        drivetrain.setDefaultCommand(new Drive(drivetrain, () -> driver.getLeftY(), () -> driver.getRightY()));
+    }
 
     @Override
     protected void releaseDefaultCommands() {}
 
     @Override
     protected void initializeDashboardCommands() {}
-
 
     @Override
     protected void configureFaultCodes() {}
