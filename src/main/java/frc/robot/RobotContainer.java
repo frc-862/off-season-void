@@ -30,7 +30,9 @@ public class RobotContainer extends LightningContainer {
     protected void initializeNamedCommands() {}
 
     @Override
-    protected void configureButtonBindings() {}
+    protected void configureButtonBindings() {
+        // TODO: David will help you with this!
+    }
 
     @Override
     protected void configureSystemTests() {}

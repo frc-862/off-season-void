@@ -28,6 +28,13 @@ public final class Constants {
         public static final int RIGHT_THREE_CAN = 3;
     }
 
+    public final class ShooterConstants {
+        public static final int SHOOTER_MOTOR_CAN = 11;
+
+        // REMEMBER: power is percentage based (1 = 100%)!
+        public static final double SHOOTER_POWER = 1;
+    }
+
     public final class PoseConstants {
         public static final Translation2d FIELD_LIMIT = null;
     }
