@@ -8,15 +8,17 @@ public class Collector extends SubsystemBase {
 
     private TalonFX collectorMotor;
 
-    /** Creates a new Collector. */
+    /** Creates a new Collector Subsystem. */
     public Collector() {
         collectorMotor = new TalonFX(CollectorConstants.COLLECTOR_MOTOR_CAN);
     }
 
+    /** Sets power to the collector motor */
     public void setPower(double power){
         collectorMotor.set(power);
     }
 
+    /** Stops the collector motor */
     public void stop(){
         setPower(0);
     }

@@ -10,7 +10,7 @@ public class Drive extends Command {
     private DoubleSupplier leftPower;
     private DoubleSupplier rightPower;
 
-    /** Creates a new Drive. */
+    /** Creates a new Drive Command. */
     public Drive(Drivetrain drivetrain, DoubleSupplier leftPower, DoubleSupplier rightPower) {
         this.drivetrain = new Drivetrain();
 

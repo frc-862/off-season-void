@@ -5,14 +5,14 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Shooter extends SubsystemBase {
 
-    // TODO: create the shooter motor using the motor CAN id from the ShooterConstants class
+    // TODO: create the shooter motor using the motor CAN ID from the ShooterConstants class
     /*
      * REMEMBER: you need the TalonFX variable type and "private" keyword 
      * (you don't want to use the motor outside of the class)
      */
 
     
-    /** Creates a new Shooter. */
+    /** Creates a new Shooter Subsystem. */
     public Shooter() {
         // TODO: set a TalonFX object to the newly created shooter motor
         // REMEMBER: use "new" when creating an object from a class
@@ -24,7 +24,7 @@ public class Shooter extends SubsystemBase {
      * (you want to use the method outside of the class)
      */
 
-    // TODO: create the method "stop" which calls "setPower" with the "power" of zero
+    // TODO: create the method "stop" which calls the "setPower" method with the "power" parameter set to zero
     /*
      * REMEMBER: you want to use the "public" keyword
      * (you want to use the method outside of the class)

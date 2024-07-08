@@ -13,12 +13,13 @@ public class Shoot extends Command {
      * (you don't want this "shooter" variable to be changed)
      */
 
-    /** Creates a new Shoot. */
+    /** Creates a new Shoot Command. */
     public Shoot(Shooter shooter) {
 
         // TODO: set a new "Shooter" object to the newly created "shooter" variable
         // REMEMBER: use "new" when creating an object from a class
 
+        // REMEMBER: the "addRequirements" method is to make sure that subsystems aren't used in other commands
         addRequirements(shooter);
     }
 
@@ -29,13 +30,13 @@ public class Shoot extends Command {
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
-        // TODO: use the "setPower" method from your "shooter" object and set the power from "ShooterConstants"
+        // TODO: use the "setPower" method from your "shooter" variable and set the power from "ShooterConstants"
     }
 
     // Called once the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
-        // TODO: use the "stop" method from you "shooter" object
+        // TODO: use the "stop" method from your "shooter" variable
     }
 
     // Returns true when the command should end.
