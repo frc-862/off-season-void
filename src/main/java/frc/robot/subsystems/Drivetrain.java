@@ -14,7 +14,7 @@ public class Drivetrain extends SubsystemBase {
     private TalonFX right2;
     private TalonFX right3;
 
-    /** Creates a new Drivetrain. */
+    /** Creates a new Drivetrain Subsystem. */
     public Drivetrain() {
         left1 = new TalonFX(DrivetrainConstants.LEFT_ONE_CAN);
         left2 = new TalonFX(DrivetrainConstants.LEFT_TWO_CAN);

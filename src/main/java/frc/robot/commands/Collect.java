@@ -9,7 +9,7 @@ public class Collect extends Command {
     private final Collector collector;
     private DoubleSupplier Collectpower;
 
-    /** Creates a new Collect. */
+    /** Creates a new Collect Command. */
     public Collect(Collector collector, DoubleSupplier Collectpower) {
         this.collector = collector;
 

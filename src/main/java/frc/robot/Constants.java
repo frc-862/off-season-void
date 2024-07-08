@@ -11,11 +11,13 @@ import edu.wpi.first.math.geometry.Translation2d;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
+    /** Constant values for our Operator Ports and Interface */
     public final class OperatorConstants {
         public static final int DRIVER_PORT = 0;
         public static final int COPILOT_PORT = 1;
     }
     
+    /** Constant values and CAN IDs for our Drivetrain */
     public final class DrivetrainConstants {
         // left motors
         public static final int LEFT_ONE_CAN = 4;
@@ -28,6 +30,7 @@ public final class Constants {
         public static final int RIGHT_THREE_CAN = 3;
     }
 
+    /** Constant values and CAN IDs for our Shooter */
     public final class ShooterConstants {
         public static final int SHOOTER_MOTOR_CAN = 11;
 
@@ -35,10 +38,12 @@ public final class Constants {
         public static final double SHOOTER_POWER = 1;
     }
 
+    /** Constant values and CAN IDs for our Collector */
     public final class CollectorConstants {
         public static final int COLLECTOR_MOTOR_CAN = 15;
     }
 
+    /** Ignore This */
     public final class PoseConstants {
         public static final Translation2d FIELD_LIMIT = null;
     }
