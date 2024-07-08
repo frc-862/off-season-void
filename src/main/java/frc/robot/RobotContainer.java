@@ -2,8 +2,12 @@ package frc.robot;
 
 import frc.robot.commands.ExampleCommand;
 import frc.robot.commands.Drive;
+import frc.robot.commands.Shoot;
+import frc.robot.commands.Collect;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Drivetrain;
+import frc.robot.subsystems.Shooter;
+import frc.robot.subsystems.Collector;
 import frc.robot.Constants.OperatorConstants;
 import frc.thunder.LightningContainer;
 import edu.wpi.first.wpilibj.XboxController;
@@ -22,6 +26,8 @@ public class RobotContainer extends LightningContainer {
     private static final XboxController copilot = new XboxController(OperatorConstants.COPILOT_PORT);
 
     private static final Drivetrain drivetrain = new Drivetrain();
+    private static final Shooter shooter = new Shooter();
+    private static final Collector collector = new Collector();
    
     @Override
     protected void initializeSubsystems() {}
@@ -40,6 +46,8 @@ public class RobotContainer extends LightningContainer {
     @Override
     protected void configureDefaultCommands() {
         drivetrain.setDefaultCommand(new Drive(drivetrain, () -> driver.getLeftY(), () -> driver.getRightY()));
+
+        collector.setDefaultCommand(new Collect(collector, () -> copilot.getRightTriggerAxis() - copilot.getLeftTriggerAxis()));
     }
 
     @Override

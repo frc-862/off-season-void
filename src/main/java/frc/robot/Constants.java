@@ -35,6 +35,10 @@ public final class Constants {
         public static final double SHOOTER_POWER = 1;
     }
 
+    public final class CollectorConstants {
+        public static final int COLLECTOR_MOTOR_CAN = 15;
+    }
+
     public final class PoseConstants {
         public static final Translation2d FIELD_LIMIT = null;
     }
