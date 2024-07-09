@@ -12,6 +12,7 @@ import frc.robot.subsystems.Collector;
 import frc.robot.subsystems.Indexer;
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.Constants.IndexerConstants;
+import frc.robot.Constants.ShooterConstants;
 import frc.thunder.LightningContainer;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -41,12 +42,12 @@ public class RobotContainer extends LightningContainer {
 
     @Override
     protected void configureButtonBindings() {
-
         // Indexer
         new Trigger(copilot::getRightBumper).whileTrue(new Index(indexer, () -> IndexerConstants.INDEXER_POWER));
         new Trigger(copilot::getLeftBumper).whileTrue(new Index(indexer, () -> -IndexerConstants.INDEXER_POWER));
 
-        // TODO: David will help you with this!
+        // TODO: create a new Trigger that calls a new "Shoot" command when the "A" button is pressed
+        // TODO: using a Lambda expression, set the DoubleSupplier needed to the "SHOOTER_POWER" constant from "ShooterConstants"
     }
 
     @Override
