@@ -43,6 +43,13 @@ public final class Constants {
         public static final int COLLECTOR_MOTOR_CAN = 15;
     }
 
+    /** Constant values and CAN IDs for our Indexer */
+    public final class IndexerConstants {
+        public static final int INDEXER_MOTOR_CAN = 16;
+
+        public static final double INDEXER_POWER = 1;
+    }
+
     /** Ignore This */
     public final class PoseConstants {
         public static final Translation2d FIELD_LIMIT = null;
