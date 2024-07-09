@@ -21,7 +21,7 @@ public class Shoot extends Command {
      */
 
     /** Creates a new Shoot Command. */
-    public Shoot(Shooter shooter, double shootPower) {
+    public Shoot(Shooter shooter, DoubleSupplier shootPower) {
         // TODO: set up the "shooter" variable for the constructor
         // REMEMBER: use the "this" keyword to refer to the current object
 
