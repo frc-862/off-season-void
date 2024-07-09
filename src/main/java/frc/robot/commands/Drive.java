@@ -12,7 +12,7 @@ public class Drive extends Command {
 
     /** Creates a new Drive Command. */
     public Drive(Drivetrain drivetrain, DoubleSupplier leftPower, DoubleSupplier rightPower) {
-        this.drivetrain = new Drivetrain();
+        this.drivetrain = drivetrain;
 
         this.leftPower = leftPower;
         this.rightPower = rightPower;

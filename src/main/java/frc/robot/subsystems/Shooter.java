@@ -2,19 +2,21 @@ package frc.robot.subsystems;
 
 import com.ctre.phoenix6.hardware.TalonFX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants.ShooterConstants;
 
 public class Shooter extends SubsystemBase {
 
-    // TODO: create the shooter motor using the motor CAN ID from the ShooterConstants class
+    // TODO: create a TalonFX variable named "shooterMotor"
     /*
-     * REMEMBER: you need the TalonFX variable type and "private" keyword 
-     * (you don't want to use the motor outside of the class)
+     * REMEMBER: use the "private" and "final" keywords
+     * (you don't want this "shooterMotor" variable to be used outside the subsystem)
+     * (you don't want this "shooterMotor" variable to be changed)
      */
 
     
     /** Creates a new Shooter Subsystem. */
     public Shooter() {
-        // TODO: set a TalonFX object to the newly created shooter motor
+        // TODO: set a TalonFX object to the newly created shooter motor while using the CAN ID from "ShooterConstants"
         // REMEMBER: use "new" when creating an object from a class
     }
 

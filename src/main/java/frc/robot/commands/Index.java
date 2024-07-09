@@ -3,16 +3,15 @@ package frc.robot.commands;
 import java.util.function.DoubleSupplier;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.Indexer;
-import frc.robot.Constants.IndexerConstants;
 
 public class Index extends Command {
 
     private final Indexer indexer;
-    private final DoubleSupplier indexPower;
+    private DoubleSupplier indexPower;
 
     /** Creates a new Index Command. */
     public Index(Indexer indexer, DoubleSupplier indexPower) {
-        this.indexer = new Indexer();
+        this.indexer = indexer;
 
         this.indexPower = indexPower;
 
