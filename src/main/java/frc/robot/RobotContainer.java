@@ -1,11 +1,9 @@
 package frc.robot;
 
-import frc.robot.commands.ExampleCommand;
 import frc.robot.commands.Drive;
 import frc.robot.commands.Shoot;
 import frc.robot.commands.Collect;
 import frc.robot.commands.Index;
-import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.Collector;
@@ -26,16 +24,24 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
  */
 public class RobotContainer extends LightningContainer {
 
-    private static final XboxController driver = new XboxController(OperatorConstants.DRIVER_PORT);
-    private static final XboxController copilot = new XboxController(OperatorConstants.COPILOT_PORT);
+    private XboxController driver;
+    private XboxController copilot;
 
-    private static final Drivetrain drivetrain = new Drivetrain();
-    private static final Shooter shooter = new Shooter();
-    private static final Collector collector = new Collector();
-    private static final Indexer indexer = new Indexer();
+    private Drivetrain drivetrain;
+    private Shooter shooter;
+    private Collector collector;
+    private Indexer indexer;
    
     @Override
-    protected void initializeSubsystems() {}
+    protected void initializeSubsystems() {
+        driver = new XboxController(OperatorConstants.DRIVER_PORT);
+        copilot = new XboxController(OperatorConstants.COPILOT_PORT);
+
+        drivetrain = new Drivetrain();
+        shooter = new Shooter();
+        collector = new Collector();
+        indexer = new Indexer();
+    }
 
     @Override
     protected void initializeNamedCommands() {}

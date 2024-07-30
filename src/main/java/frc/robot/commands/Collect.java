@@ -7,13 +7,13 @@ import frc.robot.subsystems.Collector;
 public class Collect extends Command {
 
     private final Collector collector;
-    private DoubleSupplier Collectpower;
+    private DoubleSupplier collectPower;
 
     /** Creates a new Collect Command. */
-    public Collect(Collector collector, DoubleSupplier Collectpower) {
+    public Collect(Collector collector, DoubleSupplier collectPower) {
         this.collector = collector;
 
-        this.Collectpower = Collectpower;
+        this.collectPower = collectPower;
 
         addRequirements(collector);
     }
@@ -21,13 +21,13 @@ public class Collect extends Command {
     // Called when the command is initially scheduled.
     @Override
     public void initialize() {
-        collector.setPower(Collectpower.getAsDouble());
+        collector.setPower(collectPower.getAsDouble());
     }
 
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
-        collector.setPower(Collectpower.getAsDouble());
+        collector.setPower(collectPower.getAsDouble());
     }
 
     // Called once the command ends or is interrupted.
