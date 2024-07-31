@@ -21,8 +21,9 @@ public class Drivetrain extends SubsystemBase {
         left3 = new TalonFX(DrivetrainConstants.LEFT_THREE_CAN);
 
         right1 = new TalonFX(DrivetrainConstants.RIGHT_ONE_CAN);
-        right2 = new TalonFX(DrivetrainConstants.RIGHT_TWO_CAN);
-        right3 = new TalonFX(DrivetrainConstants.RIGHT_THREE_CAN);
+        right2 = new TalonFX(DrivetrainConstants.RIGHT_ONE_CAN);
+        right3 = new TalonFX(DrivetrainConstants.RIGHT_ONE_CAN);
+
 
         right1.setInverted(true);
         right2.setInverted(true);
@@ -50,5 +51,7 @@ public class Drivetrain extends SubsystemBase {
     }
 
     @Override
-    public void periodic() {}
+    public void periodic() {
+
+    }
 }

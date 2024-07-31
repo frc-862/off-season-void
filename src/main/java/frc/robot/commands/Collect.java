@@ -12,7 +12,6 @@ public class Collect extends Command {
     /** Creates a new Collect Command. */
     public Collect(Collector collector, DoubleSupplier collectPower) {
         this.collector = collector;
-
         this.collectPower = collectPower;
 
         addRequirements(collector);
@@ -21,7 +20,6 @@ public class Collect extends Command {
     // Called when the command is initially scheduled.
     @Override
     public void initialize() {
-        collector.setPower(collectPower.getAsDouble());
     }
 
     // Called every time the scheduler runs while the command is scheduled.

@@ -20,7 +20,7 @@ public class Collector extends SubsystemBase {
 
     /** Stops the collector motor */
     public void stop(){
-        setPower(0);
+        collectorMotor.setPower(0);
     }
 
     @Override
