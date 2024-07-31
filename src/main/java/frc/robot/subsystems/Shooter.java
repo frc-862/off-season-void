@@ -24,18 +24,12 @@ public class Shooter extends SubsystemBase {
     }
 
     // TODO: create the method "setPower" with the double type "power" as a parameter
-    public void setPower(power){
-        shooterMotor.set(power);
-    }
     /*
      * REMEMBER: you want to use the "public" keyword
      * (you want to use the method outside of the class)
      */
 
     // TODO: create the method "stop" which calls the "setPower" method with the "power" parameter set to zero
-    public void stop(){
-        shooterMotor.setPower(0);
-    }
     /*
      * REMEMBER: you want to use the "public" keyword
      * (you want to use the method outside of the class)
