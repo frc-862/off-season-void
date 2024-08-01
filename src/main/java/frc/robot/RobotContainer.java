@@ -52,8 +52,8 @@ public class RobotContainer extends LightningContainer {
         new Trigger(copilot::getRightBumper).whileTrue(new Index(indexer, () -> IndexerConstants.INDEXER_POWER));
         new Trigger(copilot::getLeftBumper).whileTrue(new Index(indexer, () -> -IndexerConstants.INDEXER_POWER));
 
-        // TODO: create a new Trigger that calls a new "Shoot" command when the "A" button is pressed
-        // TODO: using a Lambda expression, set the DoubleSupplier needed to the "SHOOTER_POWER" constant from "ShooterConstants"
+        // Shooter
+        new Trigger(copilot::getAButton).whileTrue(new Shoot(shooter, () -> ShooterConstants.SHOOTER_POWER));
     }
 
     @Override

@@ -7,28 +7,16 @@ import frc.robot.Constants.ShooterConstants;
 
 public class Shoot extends Command {
 
-    // TODO: create a "shooter" variable
-    /*
-     * REMEMBER: use the "private" and "final" keywords
-     * (you don't want this "shooter" variable to be used outside the command)
-     * (you don't want this "shooter" variable to be changed)
-     */
+    private final Shooter shooter;
 
-    // TODO: create a DoubleSupplier "shootPower" variable
-    /*
-     * REMEMBER: use the "private" keyword
-     * (you don't want this "shootPower" variable to be used outside the command)
-     */
+    private DoubleSupplier shootPower;
 
     /** Creates a new Shoot Command. */
     public Shoot(Shooter shooter, DoubleSupplier shootPower) {
-        // TODO: set up the "shooter" variable for the constructor
-        // REMEMBER: use the "this" keyword to refer to the current object
+        this.shooter = shooter;
 
-        // TODO: set up the "shootPower" variable for the constructor
-        // REMEMBER: use the "this" keyword to refer to the current object
+        this.shootPower = shootPower;
 
-        // REMEMBER: the "addRequirements" method is to make sure that subsystems aren't used in other commands
         addRequirements(shooter);
     }
 
@@ -39,14 +27,13 @@ public class Shoot extends Command {
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
-        // TODO: use the "setPower" method from your "shooter" variable and set the power with the "shootPower" variable
-        // REMEMBER: when using a DoubleSupplier, use the "getAsDouble" method
+        shooter.setPower(shootPower.getAsDouble());
     }
 
     // Called once the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
-        // TODO: use the "stop" method from your "shooter" variable
+        shooter.stop();
     }
 
     // Returns true when the command should end.
