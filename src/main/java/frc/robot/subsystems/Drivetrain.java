@@ -30,21 +30,25 @@ public class Drivetrain extends SubsystemBase {
         right3.setInverted(true);
     }
 
-    /** Sets power to the left side of the drivetrain */
+    /** Sets power to the left side of the drivetrain
+     * @param power Percentage of power given to the motors
+     */
     public void setLeftPower(double power){
         left1.set(power);
         left2.set(power);
         left3.set(power);
     }
 
-    /** Sets power to the right side of the drivetrain */
+    /** Sets power to the right side of the drivetrain 
+     * @param power Percentage of power given to the motors
+     */
     public void setRightPower(double power){
         right1.set(power);
         right2.set(power);
         right3.set(power);
     }
 
-    /** Stops the drivetrain on both sides */
+    /** Stops the drivetrain motors on both sides */
     public void stop(){
         setLeftPower(0);
         setRightPower(0);

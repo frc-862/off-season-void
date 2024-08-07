@@ -13,7 +13,9 @@ public class Collector extends SubsystemBase {
         collectorMotor = new TalonFX(CollectorConstants.COLLECTOR_MOTOR_CAN);
     }
 
-    /** Sets power to the collector motor */
+    /** Sets power to the collector motor 
+     * @param power Percentage of power given to the motor
+     */
     public void setPower(double power){
         collectorMotor.set(power);
     }

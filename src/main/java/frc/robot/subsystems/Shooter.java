@@ -14,10 +14,14 @@ public class Shooter extends SubsystemBase {
         shooterMotor = new TalonFX(ShooterConstants.SHOOTER_MOTOR_CAN);
     }
 
+    /** Sets the power to the shooter motor
+     * @param power Percentage of power given to the motor
+     */
     public void setPower(double power) {
         shooterMotor.set(power);
     }
 
+    /** stops the shooter motor */
     public void stop() {
         setPower(0);
     }

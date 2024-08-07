@@ -4,13 +4,18 @@ import frc.robot.commands.Drive;
 import frc.robot.commands.Shoot;
 import frc.robot.commands.Collect;
 import frc.robot.commands.Index;
+import frc.robot.commands.AimTurret;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.Collector;
 import frc.robot.subsystems.Indexer;
+import frc.robot.subsystems.Turret;
 import frc.robot.Constants.OperatorConstants;
-import frc.robot.Constants.IndexerConstants;
+import frc.robot.Constants.DrivetrainConstants;
 import frc.robot.Constants.ShooterConstants;
+import frc.robot.Constants.CollectorConstants;
+import frc.robot.Constants.IndexerConstants;
+import frc.robot.Constants.TurretConstants;
 import frc.thunder.LightningContainer;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -31,6 +36,7 @@ public class RobotContainer extends LightningContainer {
     private Shooter shooter;
     private Collector collector;
     private Indexer indexer;
+    private Turret turret;
    
     @Override
     protected void initializeSubsystems() {
@@ -41,6 +47,7 @@ public class RobotContainer extends LightningContainer {
         shooter = new Shooter();
         collector = new Collector();
         indexer = new Indexer();
+        turret = new Turret();
     }
 
     @Override
@@ -54,6 +61,9 @@ public class RobotContainer extends LightningContainer {
 
         // Shooter
         new Trigger(copilot::getAButton).whileTrue(new Shoot(shooter, () -> ShooterConstants.SHOOTER_POWER));
+
+        // turret
+        new Trigger(copilot::getBButton).whileTrue(new AimTurret(turret, () -> TurretConstants.TURRET_TARGET_ANGLE));
     }
 
     @Override

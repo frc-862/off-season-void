@@ -34,8 +34,7 @@ public final class Constants {
     public final class ShooterConstants {
         public static final int SHOOTER_MOTOR_CAN = 11;
 
-        // REMEMBER: power is percentage based (1 = 100%)!
-        public static final double SHOOTER_POWER = 1;
+        public static final double SHOOTER_POWER = 1d;
     }
 
     /** Constant values and CAN IDs for our Collector */
@@ -47,7 +46,34 @@ public final class Constants {
     public final class IndexerConstants {
         public static final int INDEXER_MOTOR_CAN = 16;
 
-        public static final double INDEXER_POWER = 1;
+        public static final double INDEXER_POWER = 1d;
+    }
+
+    /** Constant values and CAN IDs for our Turret */
+    public final class TurretConstants {
+        public static final int TURRET_MOTOR_CAN = 12;
+
+        public static final double TURRET_kP_FAST = 0.02;
+        public static final double TURRET_kI_FAST = 0d;
+        public static final double TURRET_kD_FAST = 0.001;
+
+        public static final double TURRET_kP_SLOW = 0.03;
+        public static final double TURRET_kI_SLOW = 0d;
+        public static final double TURRET_kD_SLOW = 0.0009;
+
+        public static final double TURRET_SLOW_PID_THRESHOLD = 10d; // degrees
+
+        public static final double MIN_TURRET_ANGLE = -100d;
+        public static final double MAX_TURRET_ANGLE = 100d;
+
+        public static final double MIN_TURRET_POWER = 0.054;
+
+        public static final double TURRET_MAX_MOTOR_OUTPUT =  0.6d;
+
+        public static final double TURRET_TURN_GEAR_RATIO = 14d;
+
+        // for testing (temporary)
+        public static final double TURRET_TARGET_ANGLE = 30d;
     }
 
     /** Ignore This */
