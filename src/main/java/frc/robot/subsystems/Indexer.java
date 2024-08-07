@@ -13,7 +13,9 @@ public class Indexer extends SubsystemBase {
         indexerMotor = new VictorSPX(16);
     }
 
-    /** Sets power to the indexer motor */
+    /** Sets power to the indexer motor 
+     * @param power Percentage of power given to the motor
+     */
     public void setPower(double power) {
         indexerMotor.set(VictorSPXControlMode.PercentOutput, power);
     }
