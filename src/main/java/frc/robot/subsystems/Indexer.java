@@ -13,6 +13,9 @@ public class Indexer extends SubsystemBase {
         indexerMotor = new VictorSPX(16);
     }
 
+    @Override
+    public void periodic() {}
+
     /** Sets power to the indexer motor 
      * @param power Percentage of power given to the motor
      */
@@ -24,7 +27,4 @@ public class Indexer extends SubsystemBase {
     public void stop() {
         setPower(0);
     }
-
-    @Override
-    public void periodic() {}
 }

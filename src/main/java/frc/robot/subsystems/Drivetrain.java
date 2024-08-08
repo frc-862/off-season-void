@@ -30,6 +30,9 @@ public class Drivetrain extends SubsystemBase {
         right3.setInverted(true);
     }
 
+    @Override
+    public void periodic() {}
+
     /** Sets power to the left side of the drivetrain
      * @param power Percentage of power given to the motors
      */
@@ -52,10 +55,5 @@ public class Drivetrain extends SubsystemBase {
     public void stop(){
         setLeftPower(0);
         setRightPower(0);
-    }
-
-    @Override
-    public void periodic() {
-
     }
 }

@@ -14,6 +14,9 @@ public class Shooter extends SubsystemBase {
         shooterMotor = new TalonFX(ShooterConstants.SHOOTER_MOTOR_CAN);
     }
 
+    @Override
+    public void periodic() {}
+
     /** Sets the power to the shooter motor
      * @param power Percentage of power given to the motor
      */
@@ -25,7 +28,4 @@ public class Shooter extends SubsystemBase {
     public void stop() {
         setPower(0);
     }
-
-    @Override
-    public void periodic() {}
 }

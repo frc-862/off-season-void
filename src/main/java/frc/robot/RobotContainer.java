@@ -17,7 +17,8 @@ import frc.robot.Constants.CollectorConstants;
 import frc.robot.Constants.IndexerConstants;
 import frc.robot.Constants.TurretConstants;
 import frc.thunder.LightningContainer;
-import edu.wpi.first.wpilibj.XboxController;
+import frc.thunder.filter.XboxControllerFilter;
+import frc.thunder.filter.XboxControllerFilter.filterMode;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 
@@ -29,8 +30,8 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
  */
 public class RobotContainer extends LightningContainer {
 
-    private XboxController driver;
-    private XboxController copilot;
+    private XboxControllerFilter driver;
+    private XboxControllerFilter copilot;
 
     private Drivetrain drivetrain;
     private Shooter shooter;
@@ -40,8 +41,8 @@ public class RobotContainer extends LightningContainer {
    
     @Override
     protected void initializeSubsystems() {
-        driver = new XboxController(OperatorConstants.DRIVER_PORT);
-        copilot = new XboxController(OperatorConstants.COPILOT_PORT);
+        driver = new XboxControllerFilter(OperatorConstants.DRIVER_PORT, 0.05, -0.9, 0.9, filterMode.SQUARED);
+        copilot = new XboxControllerFilter(OperatorConstants.COPILOT_PORT, 0.05, -0.9, 0.9, filterMode.SQUARED);
 
         drivetrain = new Drivetrain();
         shooter = new Shooter();
@@ -63,7 +64,7 @@ public class RobotContainer extends LightningContainer {
         new Trigger(copilot::getAButton).whileTrue(new Shoot(shooter, () -> ShooterConstants.SHOOTER_POWER));
 
         // turret
-        new Trigger(copilot::getBButton).whileTrue(new AimTurret(turret, () -> TurretConstants.TURRET_TARGET_ANGLE));
+        // new Trigger(copilot::getBButton).whileTrue(new AimTurret(turret, () -> TurretConstants.TURRET_TARGET_ANGLE));
     }
 
     @Override
