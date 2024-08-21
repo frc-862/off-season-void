@@ -5,6 +5,7 @@ import frc.robot.commands.Shoot;
 import frc.robot.commands.Collect;
 import frc.robot.commands.Index;
 import frc.robot.commands.AimTurret;
+import frc.robot.commands.ResetTurretAngle;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.Collector;
@@ -64,7 +65,8 @@ public class RobotContainer extends LightningContainer {
         new Trigger(copilot::getAButton).whileTrue(new Shoot(shooter, () -> ShooterConstants.SHOOTER_POWER));
 
         // turret
-        // new Trigger(copilot::getBButton).whileTrue(new AimTurret(turret, () -> TurretConstants.TURRET_TARGET_ANGLE));
+        new Trigger(copilot::getBButton).whileTrue(new AimTurret(turret, () -> TurretConstants.TURRET_TARGET_ANGLE)).whileFalse(new AimTurret(turret, () -> 0));
+        new Trigger(copilot::getXButton).whileTrue(new ResetTurretAngle(turret));
     }
 
     @Override
