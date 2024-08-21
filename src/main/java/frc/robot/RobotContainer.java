@@ -41,7 +41,7 @@ public class RobotContainer extends LightningContainer {
    
     @Override
     protected void initializeSubsystems() {
-        driver = new XboxControllerFilter(OperatorConstants.DRIVER_PORT, 0.05, -0.9, 0.9, filterMode.SQUARED);
+        driver = new XboxControllerFilter(OperatorConstants.DRIVER_PORT, 0.1, -0.9, 0.9, filterMode.SQUARED);
         copilot = new XboxControllerFilter(OperatorConstants.COPILOT_PORT, 0.05, -0.9, 0.9, filterMode.SQUARED);
 
         drivetrain = new Drivetrain();
@@ -73,7 +73,7 @@ public class RobotContainer extends LightningContainer {
     @Override
     protected void configureDefaultCommands() {
         // drivetrain
-        drivetrain.setDefaultCommand(new Drive(drivetrain, () -> driver.getLeftY(), () -> driver.getRightY()));
+        drivetrain.setDefaultCommand(new Drive(drivetrain, () -> driver.getLeftY(), () -> -driver.getRightY()));
 
         // collector
         collector.setDefaultCommand(new Collect(collector, () -> copilot.getRightTriggerAxis() - copilot.getLeftTriggerAxis()));
