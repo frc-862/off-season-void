@@ -4,11 +4,22 @@
 
 package frc.robot.commands;
 
+import java.lang.annotation.Target;
+import java.util.function.DoubleSupplier;
+
 import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.subsystems.Turret;
 
 public class ContinuousTargeting extends Command {
+
+  private final Turret turret;
+  private DoubleSupplier target;
   /** Creates a new ContinuousTargeting. */
-  public ContinuousTargeting() {
+  public ContinuousTargeting(Turret turret, DoubleSupplier target){
+    this.turret = turret;
+    this.target = target;
+
+    addRequirements(turret);
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
@@ -18,11 +29,15 @@ public class ContinuousTargeting extends Command {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+    turret.setTargetAngle(turret.getTargetAngle() + target.getAsDouble());
+  }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
+    turret.stop();
+  }
 
   // Returns true when the command should end.
   @Override
