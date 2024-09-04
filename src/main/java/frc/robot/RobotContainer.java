@@ -66,10 +66,9 @@ public class RobotContainer extends LightningContainer {
         new Trigger(copilot::getAButton).whileTrue(new Shoot(shooter, () -> ShooterConstants.SHOOTER_POWER));
 
         // turret
-        new Trigger(copilot::getBButton).whileTrue(new ContinuousTargeting(turret, () -> 1));
-        new Trigger(copilot::getYButton).whileTrue(new ContinuousTargeting(turret, () -> -1));
-        // new Trigger(copilot::getBButton).whileTrue(new AimTurret(turret, () -> TurretConstants.TURRET_TARGET_ANGLE)).whileFalse(new AimTurret(turret, () -> 0));
-        // new Trigger(copilot::getXButton).whileTrue(new ResetTurretAngle(turret));
+        new Trigger(copilot::getBButton).whileTrue(new ContinuousTargeting(turret, () -> 5));
+        new Trigger(copilot::getYButton).whileTrue(new ContinuousTargeting(turret, () -> -5));
+        new Trigger(copilot::getXButton).whileTrue(new ResetTurretAngle(turret));
     }
 
     @Override
