@@ -46,6 +46,10 @@ public final class Constants {
     public final class IndexerConstants {
         public static final int INDEXER_MOTOR_CAN = 16;
 
+        public static final int ENTER_BEAMBREAK = 1;
+        public static final int EXIT_BEAMBREAK = 0;
+        public static final double DEBOUNCER_TIME = 0.1;
+
         public static final double INDEXER_POWER = 1d;
     }
 
